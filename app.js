@@ -8,7 +8,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/version', function(req, res) {
-  res.status(200).send('2.0\n');
+  res.status(200).send('1.0\n');
 });
 
 var server = app.listen(process.env.PORT || 8080, function () {
