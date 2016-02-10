@@ -1,13 +1,13 @@
 FROM node
 
 # Update date to rebuild cached image
-ENV REFRESHED_AT 2015-12-09
+ENV REFRESHED_AT 2016-02-10
 
 # File Author / Maintainer
 MAINTAINER Jeff Deskins
 
 
-# Install app dependencies
+# Install and cache app dependencies
 COPY package.json /src/package.json
 RUN cd /src; npm install
 
