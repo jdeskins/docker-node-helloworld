@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    app: helloworld
+    track: stable
+    version: v1
+  name: helloworld-v1
+spec:
+  replicas: 1
+  selector:
+    app: helloworld
+    track: stable
+    version: v1
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        track: stable
+        version: v1
+    spec:
+      containers:
+        - image: jdeskins/hello-node:1.0
+          name: helloworld
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /version
+              port: 8080
+            initialDelaySeconds: 5
+            timeoutSeconds: 5
