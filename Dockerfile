@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:5.11.0
 
 # Update date to rebuild cached image
 ENV REFRESHED_AT 2016-02-10
