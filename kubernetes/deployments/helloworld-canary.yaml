@@ -19,7 +19,7 @@ spec:
     metadata:
       labels:
         run: hello-node
-        track: stable
+        track: canary
     spec:
       containers:
       - name: hello-node
