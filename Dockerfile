@@ -1,18 +1,15 @@
-FROM node:5.11.0
+FROM node:7.4.0-alpine
 
-# Update date to rebuild cached image
-ENV REFRESHED_AT 2016-02-10
+ENV REFRESHED_AT 2017-01-06
 
-# File Author / Maintainer
 MAINTAINER Jeff Deskins
-
 
 # Install and cache app dependencies
 COPY package.json /src/package.json
-RUN cd /src; npm install
 
-# Define working directory
 WORKDIR /src
+
+RUN npm install
 
 # Bundle app source
 COPY . /src
