@@ -1,5 +1,6 @@
 .git
 .idea
 .settings
+kubernetes
 start_docker.sh
 stop_docker.sh
